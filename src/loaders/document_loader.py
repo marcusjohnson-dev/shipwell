@@ -2,7 +2,11 @@ import os
 from pathlib import Path
 from typing import List
 from langchain.schema import Document
-from langchain_community.document_loaders import TextLoader
+from langchain_community.document_loaders import (
+    TextLoader,
+    PyPDFLoader,
+    Docx2txtLoader,
+)
 
 
 class DocumentLoader:
@@ -10,6 +14,8 @@ class DocumentLoader:
     
     SUPPORTED_FORMATS = {
         '.txt': 'text',
+        '.pdf': 'pdf',
+        '.docx': 'docx',
     }
     
     def load_directory(self, folder_path: str) -> List[Document]:
@@ -36,6 +42,14 @@ class DocumentLoader:
         """Load a single file based on its extension."""
         if extension == '.txt':
             loader = TextLoader(file_path, encoding='utf-8')
+            return loader.load()
+        
+        elif extension == '.pdf':
+            loader = PyPDFLoader(file_path)
+            return loader.load()
+
+        elif extension == '.docx':
+            loader = Docx2txtLoader(file_path)
             return loader.load()
         
         return []
