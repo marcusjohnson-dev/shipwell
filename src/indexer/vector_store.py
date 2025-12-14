@@ -1,6 +1,3 @@
-"""
-Vector store manager for indexing and retrieving documents.
-"""
 from typing import List
 from langchain.schema import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
