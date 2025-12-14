@@ -7,6 +7,8 @@ from langchain_community.document_loaders import (
     PyPDFLoader,
     Docx2txtLoader,
 )
+from PIL import Image
+import pytesseract
 
 
 class DocumentLoader:
@@ -16,6 +18,9 @@ class DocumentLoader:
         '.txt': 'text',
         '.pdf': 'pdf',
         '.docx': 'docx',
+        '.jpg': 'image',
+        '.jpeg': 'image',
+        '.png': 'image',
     }
     
     def load_directory(self, folder_path: str) -> List[Document]:
@@ -54,5 +59,18 @@ class DocumentLoader:
         elif extension == '.docx':
             loader = Docx2txtLoader(file_path)
             return loader.load()
+        
+        elif extension in ['.jpg', '.jpeg', '.png']:
+            image = Image.open(file_path)
+            text = pytesseract.image_to_string(image)
+    
+            if text.strip():
+                return [Document(
+                    page_content=text,
+                    metadata={'source': file_path, 'type': 'image'}
+            )]
+            else:
+                print(f"No text found in image: {file_path}")
+                return []
         
         return []

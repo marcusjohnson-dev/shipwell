@@ -8,7 +8,7 @@ class QAAgent:
     def __init__(self, vectorstore_manager):
         self.retriever = vectorstore_manager.get_retriever(k=3)
         
-        # Start with GPT-3.5 for cost efficiency
+        # Using GPT-3.5 for cost efficiency
         self.llm = ChatOpenAI(
             model="gpt-3.5-turbo",
             temperature=0
@@ -23,7 +23,8 @@ class QAAgent:
     
     def ask(self, question: str) -> dict:
         """Ask a question and get an answer with sources."""
-        result = self.chain({"query": question})
+        # I used .invoke() here instead of call to fix deprecation warning
+        result = self.chain.invoke({"query": question})
         
         return {
             "answer": result["result"],
