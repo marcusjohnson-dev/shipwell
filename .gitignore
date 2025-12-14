@@ -1,0 +1,27 @@
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ChromaDB
+chroma_db/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
