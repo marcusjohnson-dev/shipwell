@@ -5,7 +5,7 @@ from src.indexer import VectorStoreManager
 from src.agent import QAAgent
 
 import os
-os.environ["ANONYMIZED_TELEMETRY"] = "False"  # Used this to disable ChromaDB telemetry
+os.environ["ANONYMIZED_TELEMETRY"] = "False"  # Used this to disable ChromaDB telemetry; still didn't work, might need to upgrade DB
 
 
 def main():
