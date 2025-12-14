@@ -32,8 +32,11 @@ class DocumentLoader:
                 
                 if ext in self.SUPPORTED_FORMATS:
                     print(f"Loading: {file_path.name}")
-                    docs = self._load_file(str(file_path), ext)
-                    all_documents.extend(docs)
+                    try:
+                        docs = self._load_file(str(file_path), ext)
+                        all_documents.extend(docs)
+                    except Exception as e:
+                        print(f"Error loading {file_path.name}: {e}")
         
         print(f"\nLoaded {len(all_documents)} documents")
         return all_documents
