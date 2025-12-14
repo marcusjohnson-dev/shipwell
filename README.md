@@ -70,25 +70,28 @@ Sources:
 
 Type `quit` or `exit` to stop.
 
-## Other Questions to test with
-[1] Easy warm-up question
-    Q: "When is CloudSync Pro launching?"
-    A: February 15, 2025
-[2] Show different document types
-    Q: "What supplies does Bella's Brew order?"
-    A: Coffee beans from Mountain Peak Roasters, milk from Green Valley Dairy
-[3] OCR demonstration
-    Q: "What trail is the hiking club doing next?"
-    A: Eagle Peak Trail (from the image!)
-[4] Specific details
-    Q: "How much does Apollo the eagle weigh?"
-    A: 10.2 lbs
-[5] Cross-document comparison
-    Q: "What are the phone numbers in these documents?"
-    A: Should list multiple phone numbers from different organizations
-[6] Complex query
-    Q: "Who are the managers or leaders mentioned across all documents?"
-    A: Should mention Patty (garden), Victoria (hotel), Alex (tech company), etc.
+Other Questions to test with:
+```
+Steps, Questions, Answers:
+    [1] Easy warm-up question
+        Q: "When is CloudSync Pro launching?"
+        A: February 15, 2025...
+    [2] Show different document types
+        Q: "What supplies does Bella's Brew order?"
+        A: Coffee beans from Mountain Peak Roasters, milk from Green Valley Dairy...
+    [3] OCR demonstration
+        Q: "What trail is the hiking club doing next?"
+        A: Eagle Peak Trail (from the image!)...
+    [4] Specific details
+        Q: "How much does Apollo the eagle weigh?"
+        A: 10.2 lbs...
+    [5] Cross-document comparison
+        Q: "What are the phone numbers in these documents?"
+        A: Should list multiple phone numbers from different organizations...
+    [6] Complex query
+        Q: "Who are the managers or leaders mentioned across all documents?"
+        A: Should mention Patty (garden), Victoria (hotel), Alex (tech company), etc...
+```
 
 ## Adding Documents
 
